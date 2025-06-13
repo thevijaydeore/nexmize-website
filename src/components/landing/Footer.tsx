@@ -1,3 +1,4 @@
+
 const Footer = () => {
   return (
     <footer className="border-t border-neutral-200 bg-white">
@@ -6,54 +7,57 @@ const Footer = () => {
           <div>
             <div className="flex items-center gap-2 mb-6">
               <div className="w-8 h-8 bg-primary rounded-full"></div>
-              <span className="text-xl font-semibold">Lovely</span>
+              <span className="text-xl font-semibold">TechSolutions</span>
             </div>
             <p className="text-neutral-600 text-sm">
-              Modern SaaS Platform for Businesses
+              Professional Software Development Company
             </p>
           </div>
           
           <div>
-            <h4 className="font-semibold mb-4">Product</h4>
+            <h4 className="font-semibold mb-4">Services</h4>
             <ul className="space-y-3 text-sm text-neutral-600">
-              <li><a href="#" className="hover:text-primary transition-colors">Features</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Pricing</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Documentation</a></li>
+              <li><a href="#" className="hover:text-primary transition-colors">Web Applications</a></li>
+              <li><a href="#" className="hover:text-primary transition-colors">Mobile Apps</a></li>
+              <li><a href="#" className="hover:text-primary transition-colors">Business Websites</a></li>
+              <li><a href="#" className="hover:text-primary transition-colors">UI/UX Design</a></li>
             </ul>
           </div>
 
           <div>
             <h4 className="font-semibold mb-4">Company</h4>
             <ul className="space-y-3 text-sm text-neutral-600">
-              <li><a href="#" className="hover:text-primary transition-colors">About</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Blog</a></li>
+              <li><a href="#" className="hover:text-primary transition-colors">About Us</a></li>
+              <li><a href="#" className="hover:text-primary transition-colors">Our Work</a></li>
               <li><a href="#" className="hover:text-primary transition-colors">Careers</a></li>
+              <li><a href="#" className="hover:text-primary transition-colors">Blog</a></li>
             </ul>
           </div>
 
           <div>
-            <h4 className="font-semibold mb-4">Legal</h4>
+            <h4 className="font-semibold mb-4">Contact</h4>
             <ul className="space-y-3 text-sm text-neutral-600">
-              <li><a href="#" className="hover:text-primary transition-colors">Privacy</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Terms</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">License</a></li>
+              <li><a href="#" className="hover:text-primary transition-colors">Get Quote</a></li>
+              <li><a href="#" className="hover:text-primary transition-colors">Support</a></li>
+              <li><a href="#" className="hover:text-primary transition-colors">Privacy Policy</a></li>
+              <li><a href="#" className="hover:text-primary transition-colors">Terms of Service</a></li>
             </ul>
           </div>
         </div>
 
         <div className="border-t border-neutral-200 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-neutral-600">
-            © 2024 Lovely. All rights reserved.
+            © 2024 TechSolutions. All rights reserved.
           </p>
           <div className="flex gap-6">
             <a href="#" className="text-neutral-600 hover:text-primary transition-colors">
-              Twitter
+              LinkedIn
             </a>
             <a href="#" className="text-neutral-600 hover:text-primary transition-colors">
               GitHub
             </a>
             <a href="#" className="text-neutral-600 hover:text-primary transition-colors">
-              Discord
+              Twitter
             </a>
           </div>
         </div>

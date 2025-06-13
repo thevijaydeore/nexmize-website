@@ -1,17 +1,23 @@
+
 import { Check } from "lucide-react";
 import { Card } from "@/components/ui/card";
 
 const Features = () => {
   const features = [
     {
-      title: "Intelligent Task Management",
-      description: "Streamline your tasks and collaborate seamlessly with our cutting-edge SaaS startup platform.",
-      points: ["Smart Task Assignment", "Real-time Collaboration", "Data Security & Privacy"]
+      title: "Web Applications & Websites",
+      description: "We create powerful web applications and professional business websites that drive results and engage your audience.",
+      points: ["Custom Web Applications", "Responsive Business Websites", "E-commerce Solutions"]
     },
     {
-      title: "Advanced Analytics",
-      description: "Harness the power of AI-driven analytics to optimize your campaigns and understand your audience better.",
-      points: ["Smart Audience Segmentation", "Predictive Performance", "Real-time Visualization"]
+      title: "Mobile App Development",
+      description: "Native and cross-platform mobile applications for Android and iOS that deliver exceptional user experiences.",
+      points: ["Android App Development", "iOS App Development", "Cross-Platform Solutions"]
+    },
+    {
+      title: "UI/UX Design Services",
+      description: "Beautiful and intuitive designs that not only look great but also provide seamless user experiences.",
+      points: ["User Interface Design", "User Experience Research", "Design System Creation"]
     }
   ];
 
@@ -20,11 +26,11 @@ const Features = () => {
       <div className="container-padding">
         <div className="text-center mb-16">
           <span className="bg-accent-purple/10 text-accent-purple px-4 py-1.5 rounded-full text-sm font-medium">
-            TWO-COL FEATURES
+            OUR SERVICES
           </span>
-          <h2 className="heading-lg mt-6">Supercharge Your Workflows</h2>
+          <h2 className="heading-lg mt-6">Complete Digital Solutions</h2>
           <p className="text-neutral-600 mt-4 max-w-2xl mx-auto">
-            Unlock your team's true potential with our state-of-the-art SaaS platform.
+            From concept to launch, we provide end-to-end development services for your digital needs.
           </p>
         </div>
 
@@ -44,9 +50,9 @@ const Features = () => {
                 ))}
               </ul>
               <div className="mt-8 flex gap-4">
-                <button className="button-primary">Start 14-day trial</button>
+                <button className="button-primary">Get Quote</button>
                 <button className="px-6 py-3 text-neutral-600 hover:text-primary transition-colors">
-                  Contact Sales
+                  Learn More
                 </button>
               </div>
             </div>

@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 
 const Hero = () => {
@@ -11,7 +12,7 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          Build Your Next SaaS Platform
+          Build Your Digital Future
         </motion.h1>
         <motion.p 
           className="text-xl text-neutral-600 mb-8"
@@ -19,7 +20,7 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          A powerful and flexible platform designed for modern businesses and startups.
+          We specialize in creating stunning web applications, mobile apps (Android & iOS), business websites, and exceptional UI/UX designs.
         </motion.p>
         <motion.div 
           className="flex flex-wrap justify-center gap-4"
@@ -28,10 +29,10 @@ const Hero = () => {
           transition={{ duration: 0.5, delay: 0.4 }}
         >
           <button className="button-primary flex items-center gap-2">
-            Get Started Now
+            Start Your Project
           </button>
           <button className="px-6 py-3 border border-neutral-300 rounded-lg hover:bg-neutral-200/50 transition-colors">
-            Learn More
+            View Our Work
           </button>
         </motion.div>
       </div>
