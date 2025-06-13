@@ -18,8 +18,12 @@ const AboutUs = () => {
   };
 
   return (
-    <section id="about" className="py-24 bg-neutral-100">
-      <div className="container-padding">
+    <section id="about" className="py-24 bg-gradient-to-br from-neutral-50 via-accent-purple/5 to-accent-green/5 relative overflow-hidden">
+      {/* Background blur elements */}
+      <div className="absolute top-0 right-0 w-80 h-80 bg-accent-purple/10 rounded-full blur-3xl translate-x-1/3 -translate-y-1/3"></div>
+      <div className="absolute bottom-0 left-0 w-80 h-80 bg-accent-green/10 rounded-full blur-3xl -translate-x-1/3 translate-y-1/3"></div>
+      
+      <div className="container-padding relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -48,7 +52,7 @@ const AboutUs = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <Card className="glass-panel p-8 rounded-2xl">
+            <Card className="backdrop-blur-sm bg-white/70 border border-white/30 shadow-xl p-8 rounded-2xl">
               <img 
                 src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&h=600&fit=crop"
                 alt="Team working"

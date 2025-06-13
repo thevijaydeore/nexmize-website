@@ -32,8 +32,12 @@ const Features = () => {
   };
 
   return (
-    <section id="services" className="py-24">
-      <div className="container-padding">
+    <section id="services" className="py-24 bg-gradient-to-br from-accent-blue/5 via-accent-purple/5 to-accent-green/5 relative overflow-hidden">
+      {/* Background blur elements */}
+      <div className="absolute top-0 left-0 w-96 h-96 bg-accent-purple/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent-blue/10 rounded-full blur-3xl translate-x-1/2 translate-y-1/2"></div>
+      
+      <div className="container-padding relative z-10">
         <div className="text-center mb-16">
           <span className="bg-accent-purple/10 text-accent-purple px-4 py-1.5 rounded-full text-sm font-medium">
             OUR SERVICES
@@ -67,7 +71,7 @@ const Features = () => {
               </div>
             </div>
             <div className="flex-1">
-              <Card className="glass-panel p-6 rounded-2xl">
+              <Card className="backdrop-blur-sm bg-white/70 border border-white/30 shadow-xl p-6 rounded-2xl">
                 <img 
                   src={feature.image}
                   alt={feature.title}

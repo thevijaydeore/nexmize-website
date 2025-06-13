@@ -35,8 +35,12 @@ const Portfolio = () => {
   };
 
   return (
-    <section id="portfolio" className="py-24 bg-white">
-      <div className="container-padding">
+    <section id="portfolio" className="py-24 bg-gradient-to-br from-accent-green/5 via-white to-accent-blue/5 relative overflow-hidden">
+      {/* Background blur elements */}
+      <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-accent-green/10 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-1/4 right-1/4 w-72 h-72 bg-accent-blue/10 rounded-full blur-3xl"></div>
+      
+      <div className="container-padding relative z-10">
         <div className="text-center mb-16">
           <span className="bg-accent-blue/10 text-accent-blue px-4 py-1.5 rounded-full text-sm font-medium">
             OUR PORTFOLIO
@@ -56,7 +60,7 @@ const Portfolio = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
             >
-              <Card className="glass-panel p-6 rounded-2xl hover:shadow-lg transition-shadow">
+              <Card className="backdrop-blur-sm bg-white/70 border border-white/30 shadow-xl p-6 rounded-2xl hover:shadow-2xl transition-all duration-300">
                 <div className="mb-4">
                   <span className="bg-accent-green/10 text-accent-green px-3 py-1 rounded-full text-xs font-medium">
                     {project.category}
@@ -71,7 +75,7 @@ const Portfolio = () => {
                 <p className="text-neutral-600 text-sm mb-4">{project.description}</p>
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.technologies.map((tech) => (
-                    <span key={tech} className="bg-neutral-200 text-neutral-700 px-2 py-1 rounded text-xs">
+                    <span key={tech} className="bg-neutral-200/80 backdrop-blur-sm text-neutral-700 px-2 py-1 rounded text-xs">
                       {tech}
                     </span>
                   ))}
