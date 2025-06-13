@@ -38,8 +38,12 @@ const ContactForm = () => {
   };
 
   return (
-    <section id="contact" className="py-24 bg-white">
-      <div className="container-padding">
+    <section id="contact" className="py-24 bg-gradient-to-br from-accent-blue/5 via-accent-purple/5 to-accent-green/5 relative overflow-hidden">
+      {/* Background blur elements */}
+      <div className="absolute top-0 left-0 w-96 h-96 bg-accent-purple/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent-blue/10 rounded-full blur-3xl translate-x-1/2 translate-y-1/2"></div>
+      
+      <div className="container-padding relative z-10">
         <div className="text-center mb-16">
           <span className="bg-primary/10 text-primary px-4 py-1.5 rounded-full text-sm font-medium">
             GET IN TOUCH
@@ -50,9 +54,9 @@ const ContactForm = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 max-w-6xl mx-auto">
           <div className="lg:col-span-2">
-            <Card className="glass-panel p-8 rounded-2xl">
+            <Card className="backdrop-blur-xl bg-white/70 border border-white/30 shadow-2xl p-8 rounded-3xl">
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
@@ -66,7 +70,7 @@ const ContactForm = () => {
                       required
                       value={formData.name}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
+                      className="w-full px-4 py-3 bg-white/50 backdrop-blur-sm border border-white/30 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
                       placeholder="Your full name"
                     />
                   </div>
@@ -81,7 +85,7 @@ const ContactForm = () => {
                       required
                       value={formData.email}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
+                      className="w-full px-4 py-3 bg-white/50 backdrop-blur-sm border border-white/30 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
                       placeholder="your@email.com"
                     />
                   </div>
@@ -98,7 +102,7 @@ const ContactForm = () => {
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
+                      className="w-full px-4 py-3 bg-white/50 backdrop-blur-sm border border-white/30 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
                       placeholder="+1 (555) 123-4567"
                     />
                   </div>
@@ -112,7 +116,7 @@ const ContactForm = () => {
                       name="company"
                       value={formData.company}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
+                      className="w-full px-4 py-3 bg-white/50 backdrop-blur-sm border border-white/30 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
                       placeholder="Your company"
                     />
                   </div>
@@ -128,7 +132,7 @@ const ContactForm = () => {
                     required
                     value={formData.service}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
+                    className="w-full px-4 py-3 bg-white/50 backdrop-blur-sm border border-white/30 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
                   >
                     <option value="">Select a service</option>
                     <option value="web-application">Web Application</option>
@@ -150,12 +154,12 @@ const ContactForm = () => {
                     value={formData.message}
                     onChange={handleChange}
                     rows={5}
-                    className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors resize-none"
+                    className="w-full px-4 py-3 bg-white/50 backdrop-blur-sm border border-white/30 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all resize-none"
                     placeholder="Tell us about your project, timeline, budget, and any specific requirements..."
                   />
                 </div>
 
-                <Button type="submit" className="w-full button-primary py-3">
+                <Button type="submit" className="w-full button-primary py-3 rounded-xl">
                   Send Message
                 </Button>
               </form>
@@ -163,10 +167,10 @@ const ContactForm = () => {
           </div>
 
           <div className="space-y-8">
-            <Card className="glass-panel p-6 rounded-2xl">
+            <Card className="backdrop-blur-xl bg-white/70 border border-white/30 shadow-2xl p-6 rounded-3xl">
               <div className="flex items-center gap-4 mb-4">
-                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
-                  <Mail className="w-6 h-6 text-primary" />
+                <div className="w-12 h-12 bg-gradient-to-br from-accent-purple to-accent-blue rounded-full flex items-center justify-center">
+                  <Mail className="w-6 h-6 text-white" />
                 </div>
                 <div>
                   <h3 className="font-semibold">Email Us</h3>
@@ -175,10 +179,10 @@ const ContactForm = () => {
               </div>
             </Card>
 
-            <Card className="glass-panel p-6 rounded-2xl">
+            <Card className="backdrop-blur-xl bg-white/70 border border-white/30 shadow-2xl p-6 rounded-3xl">
               <div className="flex items-center gap-4 mb-4">
-                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
-                  <Phone className="w-6 h-6 text-primary" />
+                <div className="w-12 h-12 bg-gradient-to-br from-accent-green to-accent-blue rounded-full flex items-center justify-center">
+                  <Phone className="w-6 h-6 text-white" />
                 </div>
                 <div>
                   <h3 className="font-semibold">Call Us</h3>
@@ -187,15 +191,16 @@ const ContactForm = () => {
               </div>
             </Card>
 
-            <Card className="glass-panel p-6 rounded-2xl">
-              <h3 className="font-semibold mb-3">Why Choose Nexmize?</h3>
-              <ul className="space-y-2 text-sm text-neutral-600">
-                <li>• Fast 24-hour response time</li>
-                <li>• Free consultation and quotes</li>
-                <li>• Experienced development team</li>
-                <li>• Ongoing support and maintenance</li>
-                <li>• Competitive pricing</li>
-              </ul>
+            <Card className="backdrop-blur-xl bg-white/70 border border-white/30 shadow-2xl p-6 rounded-3xl">
+              <h3 className="font-semibold mb-3">Get Started Today</h3>
+              <p className="text-sm text-neutral-600 mb-4">
+                Ready to transform your digital presence? Our team is here to help you every step of the way.
+              </p>
+              <div className="text-sm text-neutral-600 space-y-1">
+                <p>✓ Free consultation call</p>
+                <p>✓ Detailed project proposal</p>
+                <p>✓ Transparent pricing</p>
+              </div>
             </Card>
           </div>
         </div>
