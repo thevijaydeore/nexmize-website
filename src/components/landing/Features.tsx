@@ -7,22 +7,32 @@ const Features = () => {
     {
       title: "Web Applications & Websites",
       description: "We create powerful web applications and professional business websites that drive results and engage your audience.",
-      points: ["Custom Web Applications", "Responsive Business Websites", "E-commerce Solutions"]
+      points: ["Custom Web Applications", "Responsive Business Websites", "E-commerce Solutions"],
+      image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=800&h=600&fit=crop"
     },
     {
       title: "Mobile App Development",
       description: "Native and cross-platform mobile applications for Android and iOS that deliver exceptional user experiences.",
-      points: ["Android App Development", "iOS App Development", "Cross-Platform Solutions"]
+      points: ["Android App Development", "iOS App Development", "Cross-Platform Solutions"],
+      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=600&fit=crop"
     },
     {
       title: "UI/UX Design Services",
       description: "Beautiful and intuitive designs that not only look great but also provide seamless user experiences.",
-      points: ["User Interface Design", "User Experience Research", "Design System Creation"]
+      points: ["User Interface Design", "User Experience Research", "Design System Creation"],
+      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&h=600&fit=crop"
     }
   ];
 
+  const scrollToContact = () => {
+    const element = document.getElementById('contact');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <section className="py-24">
+    <section id="services" className="py-24">
       <div className="container-padding">
         <div className="text-center mb-16">
           <span className="bg-accent-purple/10 text-accent-purple px-4 py-1.5 rounded-full text-sm font-medium">
@@ -50,8 +60,8 @@ const Features = () => {
                 ))}
               </ul>
               <div className="mt-8 flex gap-4">
-                <button className="button-primary">Get Quote</button>
-                <button className="px-6 py-3 text-neutral-600 hover:text-primary transition-colors">
+                <button onClick={scrollToContact} className="button-primary">Get Quote</button>
+                <button onClick={scrollToContact} className="px-6 py-3 text-neutral-600 hover:text-primary transition-colors">
                   Learn More
                 </button>
               </div>
@@ -59,9 +69,9 @@ const Features = () => {
             <div className="flex-1">
               <Card className="glass-panel p-6 rounded-2xl">
                 <img 
-                  src="/placeholder.svg" 
+                  src={feature.image}
                   alt={feature.title}
-                  className="w-full h-auto rounded-lg"
+                  className="w-full h-64 object-cover rounded-lg"
                 />
               </Card>
             </div>

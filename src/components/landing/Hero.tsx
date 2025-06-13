@@ -2,6 +2,13 @@
 import { motion } from "framer-motion";
 
 const Hero = () => {
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <header className="container-padding py-12">
       {/* Hero content */}
@@ -12,7 +19,7 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          Build Your Digital Future
+          Build Your Digital Future with Nexmize
         </motion.h1>
         <motion.p 
           className="text-xl text-neutral-600 mb-8"
@@ -28,10 +35,16 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
         >
-          <button className="button-primary flex items-center gap-2">
+          <button 
+            onClick={() => scrollToSection('contact')}
+            className="button-primary flex items-center gap-2"
+          >
             Start Your Project
           </button>
-          <button className="px-6 py-3 border border-neutral-300 rounded-lg hover:bg-neutral-200/50 transition-colors">
+          <button 
+            onClick={() => scrollToSection('portfolio')}
+            className="px-6 py-3 border border-neutral-300 rounded-lg hover:bg-neutral-200/50 transition-colors"
+          >
             View Our Work
           </button>
         </motion.div>

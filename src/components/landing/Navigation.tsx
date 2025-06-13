@@ -6,27 +6,41 @@ import { motion } from "framer-motion";
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+      setIsMenuOpen(false);
+    }
+  };
+
   return (
     <nav className="fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-6xl z-50">
       <div className="glass-panel rounded-full px-6 py-4 flex items-center justify-between shadow-lg backdrop-blur-md">
         <div className="flex items-center gap-2">
           <div className="w-8 h-8 bg-primary rounded-full"></div>
-          <span className="text-xl font-semibold">TechSolutions</span>
+          <span className="text-xl font-semibold">Nexmize</span>
         </div>
         
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-8">
-          <a href="#services" className="text-neutral-600 hover:text-primary transition-colors font-medium">Services</a>
-          <a href="#portfolio" className="text-neutral-600 hover:text-primary transition-colors font-medium">Portfolio</a>
-          <a href="#about" className="text-neutral-600 hover:text-primary transition-colors font-medium">About</a>
-          <a href="#contact" className="text-neutral-600 hover:text-primary transition-colors font-medium">Contact</a>
+          <button onClick={() => scrollToSection('services')} className="text-neutral-600 hover:text-primary transition-colors font-medium">Services</button>
+          <button onClick={() => scrollToSection('portfolio')} className="text-neutral-600 hover:text-primary transition-colors font-medium">Portfolio</button>
+          <button onClick={() => scrollToSection('about')} className="text-neutral-600 hover:text-primary transition-colors font-medium">About</button>
+          <button onClick={() => scrollToSection('contact')} className="text-neutral-600 hover:text-primary transition-colors font-medium">Contact</button>
         </div>
         
         <div className="hidden md:flex items-center gap-4">
-          <button className="px-4 py-2 text-primary hover:text-primary/80 transition-colors font-medium">
+          <button 
+            onClick={() => scrollToSection('contact')}
+            className="px-4 py-2 text-primary hover:text-primary/80 transition-colors font-medium"
+          >
             Get Quote
           </button>
-          <button className="button-secondary">
+          <button 
+            onClick={() => scrollToSection('contact')}
+            className="button-secondary"
+          >
             Start Project
           </button>
         </div>
@@ -49,15 +63,21 @@ const Navigation = () => {
           transition={{ duration: 0.2 }}
         >
           <div className="flex flex-col gap-4">
-            <a href="#services" className="text-neutral-600 hover:text-primary transition-colors font-medium px-4 py-2 hover:bg-neutral-200/50 rounded-lg">Services</a>
-            <a href="#portfolio" className="text-neutral-600 hover:text-primary transition-colors font-medium px-4 py-2 hover:bg-neutral-200/50 rounded-lg">Portfolio</a>
-            <a href="#about" className="text-neutral-600 hover:text-primary transition-colors font-medium px-4 py-2 hover:bg-neutral-200/50 rounded-lg">About</a>
-            <a href="#contact" className="text-neutral-600 hover:text-primary transition-colors font-medium px-4 py-2 hover:bg-neutral-200/50 rounded-lg">Contact</a>
+            <button onClick={() => scrollToSection('services')} className="text-neutral-600 hover:text-primary transition-colors font-medium px-4 py-2 hover:bg-neutral-200/50 rounded-lg text-left">Services</button>
+            <button onClick={() => scrollToSection('portfolio')} className="text-neutral-600 hover:text-primary transition-colors font-medium px-4 py-2 hover:bg-neutral-200/50 rounded-lg text-left">Portfolio</button>
+            <button onClick={() => scrollToSection('about')} className="text-neutral-600 hover:text-primary transition-colors font-medium px-4 py-2 hover:bg-neutral-200/50 rounded-lg text-left">About</button>
+            <button onClick={() => scrollToSection('contact')} className="text-neutral-600 hover:text-primary transition-colors font-medium px-4 py-2 hover:bg-neutral-200/50 rounded-lg text-left">Contact</button>
             <hr className="border-neutral-200" />
-            <button className="text-primary hover:text-primary/80 transition-colors font-medium px-4 py-2 hover:bg-neutral-200/50 rounded-lg text-left">
+            <button 
+              onClick={() => scrollToSection('contact')}
+              className="text-primary hover:text-primary/80 transition-colors font-medium px-4 py-2 hover:bg-neutral-200/50 rounded-lg text-left"
+            >
               Get Quote
             </button>
-            <button className="button-secondary w-full">
+            <button 
+              onClick={() => scrollToSection('contact')}
+              className="button-secondary w-full"
+            >
               Start Project
             </button>
           </div>
