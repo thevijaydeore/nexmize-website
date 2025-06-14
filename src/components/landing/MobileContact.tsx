@@ -2,16 +2,22 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Phone, MessageCircle, Mail, ArrowRight } from 'lucide-react';
+import { useAnalytics } from '@/hooks/useAnalytics';
 
 const MobileContact = () => {
   const [activeTab, setActiveTab] = useState(0);
+  const { trackClick, trackConversionStep } = useAnalytics();
 
   const contactMethods = [
     {
       icon: Phone,
       title: 'Call Now',
       subtitle: 'Instant connection',
-      action: () => window.open('tel:+15551234567'),
+      action: () => {
+        window.open('tel:+15551234567');
+        trackClick('mobile_phone_button');
+        trackConversionStep('mobile_phone_click');
+      },
       color: 'from-green-500 to-green-600'
     },
     {
@@ -20,7 +26,11 @@ const MobileContact = () => {
       subtitle: 'Quick response',
       action: () => {
         const element = document.getElementById('contact');
-        if (element) element.scrollIntoView({ behavior: 'smooth' });
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+          trackClick('mobile_chat_button');
+          trackConversionStep('mobile_chat_click');
+        }
       },
       color: 'from-blue-500 to-blue-600'
     },
@@ -28,7 +38,11 @@ const MobileContact = () => {
       icon: Mail,
       title: 'Email Us',
       subtitle: 'Detailed inquiry',
-      action: () => window.open('mailto:hello@nexmize.com'),
+      action: () => {
+        window.open('mailto:hello@nexmize.com');
+        trackClick('mobile_email_button');
+        trackConversionStep('mobile_email_click');
+      },
       color: 'from-purple-500 to-purple-600'
     }
   ];

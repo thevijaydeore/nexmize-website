@@ -1,16 +1,32 @@
-
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { MessageCircle, Phone, X, ArrowRight } from "lucide-react";
+import { useAnalytics } from "@/hooks/useAnalytics";
 
 const StickyContact = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { trackClick, trackConversionStep } = useAnalytics();
 
   const scrollToContact = () => {
     const element = document.getElementById('contact');
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
       setIsOpen(false);
+      trackClick('sticky_contact_form_button');
+      trackConversionStep('sticky_cta_click');
+    }
+  };
+
+  const handlePhoneClick = () => {
+    window.open('tel:+15551234567');
+    trackClick('sticky_phone_button');
+    trackConversionStep('phone_click');
+  };
+
+  const handleToggleOpen = () => {
+    setIsOpen(!isOpen);
+    if (!isOpen) {
+      trackClick('sticky_contact_open');
     }
   };
 
@@ -26,7 +42,7 @@ const StickyContact = () => {
         <AnimatePresence>
           {!isOpen && (
             <motion.button
-              onClick={() => setIsOpen(true)}
+              onClick={handleToggleOpen}
               className="w-14 h-14 bg-gradient-to-r from-accent-purple to-accent-blue text-white rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 flex items-center justify-center group relative"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
@@ -78,7 +94,7 @@ const StickyContact = () => {
                 </button>
 
                 <button
-                  onClick={() => window.open('tel:+15551234567')}
+                  onClick={handlePhoneClick}
                   className="w-full glass-panel py-3 rounded-xl hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2 font-medium"
                 >
                   <Phone className="w-4 h-4" />
