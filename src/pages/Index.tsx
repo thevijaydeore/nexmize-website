@@ -11,14 +11,19 @@ import Footer from "@/components/landing/Footer";
 import StickyContact from "@/components/landing/StickyContact";
 import FAQ from "@/components/landing/FAQ";
 import ServiceComparison from "@/components/landing/ServiceComparison";
+import PersonalizedFeatures from "@/components/landing/PersonalizedFeatures";
+import MobileContact from "@/components/landing/MobileContact";
+import AccessibleNavigation from "@/components/landing/AccessibleNavigation";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-neutral-100">
-      <div className="max-w-7xl mx-auto">
+      <AccessibleNavigation />
+      <div className="max-w-7xl mx-auto" id="main-content">
         <Navigation />
         <Hero />
         <TrustedBy />
+        <PersonalizedFeatures />
         <Features />
         <Portfolio />
         <AboutUs />
@@ -30,6 +35,7 @@ const Index = () => {
         <FAQ />
       </div>
       <StickyContact />
+      <MobileContact />
     </div>
   );
 };

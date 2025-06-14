@@ -1,13 +1,19 @@
-
 import { motion } from "framer-motion";
 import { ArrowRight, Code, Smartphone, Palette, Zap } from "lucide-react";
+import { usePersonalization } from "@/hooks/usePersonalization";
 
 const Hero = () => {
+  const { updatePreferences, preferences } = usePersonalization();
+
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
+  };
+
+  const handleIndustrySelect = (industry: string) => {
+    updatePreferences({ industry });
   };
 
   const floatingIcons = [
@@ -24,6 +30,13 @@ const Hero = () => {
   ];
 
   const typingText = "Build Your Digital Future with Nexmize";
+
+  const industries = [
+    { id: 'healthcare', label: 'Healthcare', icon: '🏥' },
+    { id: 'ecommerce', label: 'E-commerce', icon: '🛒' },
+    { id: 'fintech', label: 'FinTech', icon: '💳' },
+    { id: 'education', label: 'Education', icon: '📚' }
+  ];
 
   return (
     <header className="container-padding py-12 relative overflow-hidden min-h-screen flex items-center">
@@ -57,6 +70,7 @@ const Hero = () => {
 
       {/* Hero content */}
       <div className="max-w-6xl mx-auto text-center relative z-10 pt-20">
+        {/* Badge */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -69,6 +83,7 @@ const Hero = () => {
           </span>
         </motion.div>
 
+        {/* Heading */}
         <motion.h1 
           className="heading-xl mb-8 bg-gradient-to-r from-primary via-accent-purple to-accent-blue bg-clip-text text-transparent"
           initial={{ opacity: 0, y: 20 }}
@@ -78,6 +93,7 @@ const Hero = () => {
           {typingText}
         </motion.h1>
 
+        {/* Description */}
         <motion.p 
           className="text-xl text-neutral-600 mb-12 max-w-3xl mx-auto leading-relaxed"
           initial={{ opacity: 0, y: 20 }}
@@ -102,6 +118,30 @@ const Hero = () => {
             </div>
           ))}
         </motion.div>
+
+        {/* Industry Selection for Personalization */}
+        {!preferences.industry && (
+          <motion.div
+            className="mb-8"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.7 }}
+          >
+            <p className="text-sm text-neutral-600 mb-4">What industry are you in?</p>
+            <div className="flex flex-wrap justify-center gap-3">
+              {industries.map((industry) => (
+                <button
+                  key={industry.id}
+                  onClick={() => handleIndustrySelect(industry.id)}
+                  className="flex items-center gap-2 px-4 py-2 glass-panel rounded-full hover:shadow-lg transition-all duration-300 text-sm font-medium"
+                >
+                  <span>{industry.icon}</span>
+                  {industry.label}
+                </button>
+              ))}
+            </div>
+          </motion.div>
+        )}
 
         {/* Enhanced CTAs */}
         <motion.div 
