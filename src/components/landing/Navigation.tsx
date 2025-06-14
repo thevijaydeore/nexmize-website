@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Menu } from "lucide-react";
 import { motion } from "framer-motion";
@@ -14,18 +13,12 @@ const Navigation = () => {
     }
   };
 
-  // Update menu items to include all the main page sections by id
+  // Only include the most important sections
   const navItems = [
     { label: "Hero", id: "hero" },
-    { label: "Trusted By", id: "trusted-by" },
-    { label: "Personalized Features", id: "personalized-features" },
     { label: "Features", id: "services" },
     { label: "Portfolio", id: "portfolio" },
     { label: "About", id: "about" },
-    { label: "Testimonials", id: "testimonials" },
-    { label: "Why Choose Us", id: "why-choose-us" },
-    { label: "Service Comparison", id: "service-comparison" },
-    { label: "FAQ", id: "faq" },
     { label: "Contact", id: "contact" },
   ];
 
@@ -55,12 +48,7 @@ const Navigation = () => {
         </div>
         
         <div className="hidden md:flex items-center gap-3">
-          <button 
-            onClick={() => scrollToSection('contact')}
-            className="px-3 py-1.5 text-primary hover:text-primary/80 transition-colors font-medium text-sm"
-          >
-            Get Quote
-          </button>
+          {/* Only keep the Start Project button */}
           <button 
             onClick={() => scrollToSection('contact')}
             className="px-4 py-1.5 bg-gradient-to-r from-accent-purple to-accent-blue text-white rounded-full hover:shadow-lg transition-all duration-300 transform hover:scale-105 font-medium text-sm"
@@ -97,12 +85,7 @@ const Navigation = () => {
               </button>
             ))}
             <hr className="border-neutral-200" />
-            <button 
-              onClick={() => scrollToSection('contact')}
-              className="text-primary hover:text-primary/80 transition-colors font-medium px-3 py-2 hover:bg-neutral-200/50 rounded-lg text-left text-sm"
-            >
-              Get Quote
-            </button>
+            {/* Only keep the Start Project button */}
             <button 
               onClick={() => scrollToSection('contact')}
               className="px-4 py-2 bg-gradient-to-r from-accent-purple to-accent-blue text-white rounded-full hover:shadow-lg transition-all duration-300 transform hover:scale-105 font-medium text-sm w-full"
