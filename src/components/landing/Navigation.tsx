@@ -14,6 +14,21 @@ const Navigation = () => {
     }
   };
 
+  // Update menu items to include all the main page sections by id
+  const navItems = [
+    { label: "Hero", id: "hero" },
+    { label: "Trusted By", id: "trusted-by" },
+    { label: "Personalized Features", id: "personalized-features" },
+    { label: "Features", id: "services" },
+    { label: "Portfolio", id: "portfolio" },
+    { label: "About", id: "about" },
+    { label: "Testimonials", id: "testimonials" },
+    { label: "Why Choose Us", id: "why-choose-us" },
+    { label: "Service Comparison", id: "service-comparison" },
+    { label: "FAQ", id: "faq" },
+    { label: "Contact", id: "contact" },
+  ];
+
   return (
     <nav className="fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-6xl z-50">
       <div className="backdrop-blur-xl bg-white/70 border border-white/30 rounded-full px-6 py-2.5 flex items-center justify-between shadow-xl">
@@ -28,10 +43,15 @@ const Navigation = () => {
         
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-6">
-          <button onClick={() => scrollToSection('services')} className="text-neutral-600 hover:text-primary transition-colors font-medium text-sm">Services</button>
-          <button onClick={() => scrollToSection('portfolio')} className="text-neutral-600 hover:text-primary transition-colors font-medium text-sm">Portfolio</button>
-          <button onClick={() => scrollToSection('about')} className="text-neutral-600 hover:text-primary transition-colors font-medium text-sm">About</button>
-          <button onClick={() => scrollToSection('contact')} className="text-neutral-600 hover:text-primary transition-colors font-medium text-sm">Contact</button>
+          {navItems.map((item) => (
+            <button
+              key={item.id}
+              onClick={() => scrollToSection(item.id)}
+              className="text-neutral-600 hover:text-primary transition-colors font-medium text-sm"
+            >
+              {item.label}
+            </button>
+          ))}
         </div>
         
         <div className="hidden md:flex items-center gap-3">
@@ -67,10 +87,15 @@ const Navigation = () => {
           transition={{ duration: 0.2 }}
         >
           <div className="flex flex-col gap-3">
-            <button onClick={() => scrollToSection('services')} className="text-neutral-600 hover:text-primary transition-colors font-medium px-3 py-2 hover:bg-neutral-200/50 rounded-lg text-left text-sm">Services</button>
-            <button onClick={() => scrollToSection('portfolio')} className="text-neutral-600 hover:text-primary transition-colors font-medium px-3 py-2 hover:bg-neutral-200/50 rounded-lg text-left text-sm">Portfolio</button>
-            <button onClick={() => scrollToSection('about')} className="text-neutral-600 hover:text-primary transition-colors font-medium px-3 py-2 hover:bg-neutral-200/50 rounded-lg text-left text-sm">About</button>
-            <button onClick={() => scrollToSection('contact')} className="text-neutral-600 hover:text-primary transition-colors font-medium px-3 py-2 hover:bg-neutral-200/50 rounded-lg text-left text-sm">Contact</button>
+            {navItems.map((item) => (
+              <button
+                key={item.id}
+                onClick={() => scrollToSection(item.id)}
+                className="text-neutral-600 hover:text-primary transition-colors font-medium px-3 py-2 hover:bg-neutral-200/50 rounded-lg text-left text-sm"
+              >
+                {item.label}
+              </button>
+            ))}
             <hr className="border-neutral-200" />
             <button 
               onClick={() => scrollToSection('contact')}
