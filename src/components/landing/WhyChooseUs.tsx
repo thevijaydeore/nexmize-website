@@ -87,7 +87,7 @@ const WhyChooseUs = () => {
                 
                 {/* Animated icon container */}
                 <div className={`relative w-16 h-16 bg-gradient-to-br ${reason.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-lg`}>
-                  <reason.icon className="w-8 h-8 text-white drop-shadow-sm" />
+                  <reason.icon className="w-8 h-8 text-white group-hover:text-white drop-shadow-sm transition-colors duration-300" />
                   <div className="absolute inset-0 bg-white/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
                 
