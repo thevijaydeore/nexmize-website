@@ -15,7 +15,7 @@ import ServiceComparison from "@/components/landing/ServiceComparison";
 import PersonalizedFeatures from "@/components/landing/PersonalizedFeatures";
 import MobileContact from "@/components/landing/MobileContact";
 import AccessibleNavigation from "@/components/landing/AccessibleNavigation";
-import FeedbackWidget from "@/components/landing/FeedbackWidget";
+import QuickFeedback from "@/components/landing/QuickFeedback";
 
 const Index = () => {
   return (
@@ -40,7 +40,7 @@ const Index = () => {
       <Footer />
       <StickyContact />
       <MobileContact />
-      <FeedbackWidget />
+      <QuickFeedback />
     </div>
   );
 };
