@@ -1,33 +1,25 @@
+
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { MessageCircle, Phone, X, ArrowRight } from "lucide-react";
-import { useAnalytics } from "@/hooks/useAnalytics";
 
 const StickyContact = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const { trackClick, trackConversionStep } = useAnalytics();
 
   const scrollToContact = () => {
     const element = document.getElementById('contact');
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
       setIsOpen(false);
-      trackClick('sticky_contact_form_button');
-      trackConversionStep('sticky_cta_click');
     }
   };
 
   const handlePhoneClick = () => {
     window.open('tel:+15551234567');
-    trackClick('sticky_phone_button');
-    trackConversionStep('phone_click');
   };
 
   const handleToggleOpen = () => {
     setIsOpen(!isOpen);
-    if (!isOpen) {
-      trackClick('sticky_contact_open');
-    }
   };
 
   return (

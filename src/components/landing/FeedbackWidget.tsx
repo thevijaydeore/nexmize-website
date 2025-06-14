@@ -2,14 +2,12 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { MessageSquare, Star, X, Send } from 'lucide-react';
-import { useAnalytics } from '@/hooks/useAnalytics';
 
 const FeedbackWidget = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [rating, setRating] = useState(0);
   const [feedback, setFeedback] = useState('');
   const [submitted, setSubmitted] = useState(false);
-  const { trackEvent } = useAnalytics();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -26,8 +24,6 @@ const FeedbackWidget = () => {
     const storedFeedback = JSON.parse(localStorage.getItem('nexmize_feedback') || '[]');
     storedFeedback.push(feedbackData);
     localStorage.setItem('nexmize_feedback', JSON.stringify(storedFeedback));
-
-    trackEvent({ type: 'form_interaction', element: 'feedback_widget', value: `rating_${rating}` });
     
     setSubmitted(true);
     setTimeout(() => {
