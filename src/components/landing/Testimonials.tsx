@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { Card } from "@/components/ui/card";
 import { Star, Quote, ChevronLeft, ChevronRight } from "lucide-react";
@@ -47,7 +46,7 @@ const Testimonials = () => {
   };
 
   return (
-    <section className="py-24 bg-gradient-to-br from-accent-purple/5 via-white to-accent-blue/5 relative overflow-hidden">
+    <section id="testimonials" className="py-24 bg-gradient-to-br from-accent-purple/5 via-white to-accent-blue/5 relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-accent-purple/10 rounded-full blur-3xl"></div>
       <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-accent-blue/10 rounded-full blur-3xl"></div>
