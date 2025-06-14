@@ -13,12 +13,12 @@ const Navigation = () => {
     }
   };
 
-  // Only include the most important sections
+  // Updated navigation items
   const navItems = [
-    { label: "Hero", id: "hero" },
-    { label: "Features", id: "services" },
+    { label: "Services", id: "services" },
     { label: "Portfolio", id: "portfolio" },
-    { label: "About", id: "about" },
+    { label: "Team", id: "about" },
+    { label: "Testimonials", id: "testimonials" },
     { label: "Contact", id: "contact" },
   ];
 
