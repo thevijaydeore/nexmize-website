@@ -1,7 +1,6 @@
-
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Plus, Minus, Clock, DollarSign, Shield, Zap } from "lucide-react";
+import { Plus, Minus, Clock, DollarSign, Shield, Zap, Users, Wrench, Package, Award } from "lucide-react";
 import { Card } from "@/components/ui/card";
 
 const FAQ = () => {
@@ -41,21 +40,25 @@ const FAQ = () => {
       category: "Technical"
     },
     {
+      icon: Users,
       question: "Do you work with startups or only established companies?",
       answer: "We work with businesses of all sizes, from early-stage startups to enterprise companies. We offer flexible payment plans and scaled solutions to match your budget and growth stage.",
       category: "Business"
     },
     {
+      icon: Wrench,
       question: "Can you help with existing projects or only new builds?",
       answer: "We can both build from scratch and improve existing applications. Our services include code audits, performance optimization, feature additions, and complete redesigns of existing systems.",
       category: "Support"
     },
     {
+      icon: Package,
       question: "What's included in the project cost?",
       answer: "All projects include design, development, testing, deployment, training, and 3 months of free support. We also provide project documentation, source code, and deployment guides.",
       category: "Pricing"
     },
     {
+      icon: Award,
       question: "How do you ensure project quality?",
       answer: "We follow industry best practices including code reviews, automated testing, security audits, and performance optimization. Every project goes through multiple quality assurance phases.",
       category: "Quality"
@@ -102,11 +105,9 @@ const FAQ = () => {
                   >
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-4">
-                        {faq.icon && (
-                          <div className="w-10 h-10 bg-gradient-to-br from-accent-purple/20 to-accent-blue/20 rounded-full flex items-center justify-center">
-                            <faq.icon className="w-5 h-5 text-accent-purple" />
-                          </div>
-                        )}
+                        <div className="w-10 h-10 bg-gradient-to-br from-accent-purple/20 to-accent-blue/20 rounded-full flex items-center justify-center">
+                          <faq.icon className="w-5 h-5 text-accent-purple" />
+                        </div>
                         <div>
                           <h3 className="font-semibold text-lg text-primary">
                             {faq.question}
