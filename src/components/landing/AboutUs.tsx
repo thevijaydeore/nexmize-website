@@ -1,6 +1,7 @@
 
 import { motion } from "framer-motion";
 import { Card } from "@/components/ui/card";
+import { Award, Coffee, Heart, Lightbulb } from "lucide-react";
 
 const AboutUs = () => {
   const stats = [
@@ -8,6 +9,50 @@ const AboutUs = () => {
     { number: "25+", label: "Happy Clients" },
     { number: "3+", label: "Years Experience" },
     { number: "24/7", label: "Support Available" }
+  ];
+
+  const team = [
+    {
+      name: "Alex Thompson",
+      role: "Lead Developer",
+      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=face",
+      expertise: "Full-stack Development"
+    },
+    {
+      name: "Maria Garcia",
+      role: "UI/UX Designer",
+      image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=300&h=300&fit=crop&crop=face",
+      expertise: "Design Systems"
+    },
+    {
+      name: "David Kim",
+      role: "Mobile Developer",
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face",
+      expertise: "React Native"
+    }
+  ];
+
+  const values = [
+    {
+      icon: Award,
+      title: "Excellence",
+      description: "We strive for perfection in every project we deliver"
+    },
+    {
+      icon: Coffee,
+      title: "Collaboration",
+      description: "Working closely with clients to achieve their vision"
+    },
+    {
+      icon: Heart,
+      title: "Passion",
+      description: "We love what we do and it shows in our work"
+    },
+    {
+      icon: Lightbulb,
+      title: "Innovation",
+      description: "Always exploring new technologies and solutions"
+    }
   ];
 
   const scrollToContact = () => {
@@ -24,7 +69,8 @@ const AboutUs = () => {
       <div className="absolute bottom-0 left-0 w-80 h-80 bg-accent-green/10 rounded-full blur-3xl -translate-x-1/3 translate-y-1/3"></div>
       
       <div className="container-padding relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        {/* About Content */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -35,7 +81,7 @@ const AboutUs = () => {
               ABOUT NEXMIZE
             </span>
             <h2 className="heading-lg mt-6 mb-6">Building Digital Excellence Since Day One</h2>
-            <p className="text-neutral-600 mb-6">
+            <p className="text-neutral-600 mb-6 text-large">
               At Nexmize, we're passionate about transforming ideas into powerful digital solutions. Our team of experienced developers, designers, and strategists work together to deliver exceptional web applications, mobile apps, and business websites that drive real results.
             </p>
             <p className="text-neutral-600 mb-8">
@@ -52,23 +98,111 @@ const AboutUs = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <Card className="backdrop-blur-sm bg-white/70 border border-white/30 shadow-xl p-8 rounded-2xl">
+            <Card className="glass-panel p-8 rounded-3xl">
               <img 
                 src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&h=600&fit=crop"
                 alt="Team working"
-                className="w-full h-64 object-cover rounded-lg mb-6"
+                className="w-full h-64 object-cover rounded-xl mb-6"
               />
               <div className="grid grid-cols-2 gap-6">
                 {stats.map((stat, index) => (
-                  <div key={stat.label} className="text-center">
-                    <div className="text-2xl font-bold text-primary mb-1">{stat.number}</div>
+                  <motion.div 
+                    key={stat.label} 
+                    className="text-center"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.3, delay: 0.4 + index * 0.1 }}
+                    viewport={{ once: true }}
+                  >
+                    <div className="text-3xl font-bold bg-gradient-to-r from-accent-purple to-accent-blue bg-clip-text text-transparent mb-1">
+                      {stat.number}
+                    </div>
                     <div className="text-sm text-neutral-600">{stat.label}</div>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
             </Card>
           </motion.div>
         </div>
+
+        {/* Team Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="mb-20"
+        >
+          <div className="text-center mb-12">
+            <h3 className="heading-md mb-4">Meet Our Team</h3>
+            <p className="text-neutral-600 max-w-2xl mx-auto">
+              Our talented team of designers and developers brings years of experience and passion to every project.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {team.map((member, index) => (
+              <motion.div
+                key={member.name}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+              >
+                <Card className="glass-panel p-6 rounded-2xl text-center hover:shadow-xl transition-all duration-300 group">
+                  <div className="relative mb-4">
+                    <img 
+                      src={member.image}
+                      alt={member.name}
+                      className="w-24 h-24 rounded-full mx-auto object-cover border-4 border-white shadow-lg group-hover:scale-105 transition-transform duration-300"
+                    />
+                    <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2">
+                      <div className="w-4 h-4 bg-green-400 rounded-full border-2 border-white animate-pulse"></div>
+                    </div>
+                  </div>
+                  <h4 className="font-bold text-lg mb-1">{member.name}</h4>
+                  <p className="text-accent-purple font-medium mb-2">{member.role}</p>
+                  <p className="text-sm text-neutral-600">{member.expertise}</p>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Values Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
+          <div className="text-center mb-12">
+            <h3 className="heading-md mb-4">Our Values</h3>
+            <p className="text-neutral-600 max-w-2xl mx-auto">
+              These core principles guide everything we do and shape the way we work with our clients.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {values.map((value, index) => (
+              <motion.div
+                key={value.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+              >
+                <Card className="glass-panel p-6 rounded-2xl text-center hover:shadow-lg transition-all duration-300 group">
+                  <div className="w-12 h-12 bg-gradient-to-r from-accent-purple to-accent-blue rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <value.icon className="w-6 h-6 text-white" />
+                  </div>
+                  <h4 className="font-bold mb-2">{value.title}</h4>
+                  <p className="text-sm text-neutral-600">{value.description}</p>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </section>
   );

@@ -1,29 +1,48 @@
 
 import { Card } from "@/components/ui/card";
 import { motion } from "framer-motion";
+import { ExternalLink, Github, ArrowRight, Calendar, Users } from "lucide-react";
+import { useState } from "react";
 
 const Portfolio = () => {
+  const [hoveredProject, setHoveredProject] = useState<number | null>(null);
+
   const projects = [
     {
       title: "E-Commerce Platform",
       description: "A comprehensive online marketplace with advanced features including payment integration, inventory management, and real-time analytics.",
       image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=800&h=600&fit=crop",
       technologies: ["React", "Node.js", "MongoDB", "Stripe"],
-      category: "Web Application"
+      category: "Web Application",
+      duration: "3 months",
+      teamSize: "4 developers",
+      results: "+250% sales increase",
+      liveUrl: "#",
+      githubUrl: "#"
     },
     {
       title: "Fitness Mobile App",
       description: "Cross-platform mobile application for fitness tracking with workout plans, progress monitoring, and social features.",
       image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=600&fit=crop",
       technologies: ["React Native", "Firebase", "Redux", "Node.js"],
-      category: "Mobile App"
+      category: "Mobile App",
+      duration: "4 months",
+      teamSize: "3 developers",
+      results: "50K+ downloads",
+      liveUrl: "#",
+      githubUrl: "#"
     },
     {
       title: "Corporate Website",
       description: "Professional business website with modern design, CMS integration, and SEO optimization for a leading consulting firm.",
       image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=800&h=600&fit=crop",
       technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Strapi"],
-      category: "Business Website"
+      category: "Business Website",
+      duration: "2 months",
+      teamSize: "2 developers",
+      results: "+180% organic traffic",
+      liveUrl: "#",
+      githubUrl: "#"
     }
   ];
 
@@ -59,20 +78,68 @@ const Portfolio = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
+              onMouseEnter={() => setHoveredProject(index)}
+              onMouseLeave={() => setHoveredProject(null)}
             >
-              <Card className="backdrop-blur-sm bg-white/70 border border-white/30 shadow-xl p-6 rounded-2xl hover:shadow-2xl transition-all duration-300">
+              <Card className="glass-panel p-6 rounded-2xl hover:shadow-2xl transition-all duration-500 group overflow-hidden relative">
+                {/* Project Image with Overlay */}
+                <div className="relative mb-4 overflow-hidden rounded-lg">
+                  <img 
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className={`absolute inset-0 bg-gradient-to-t from-black/60 to-transparent transition-opacity duration-300 ${
+                    hoveredProject === index ? 'opacity-100' : 'opacity-0'
+                  }`}>
+                    <div className="absolute bottom-4 left-4 right-4 text-white">
+                      <div className="flex gap-2 mb-2">
+                        <button className="w-8 h-8 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 transition-colors">
+                          <ExternalLink className="w-4 h-4" />
+                        </button>
+                        <button className="w-8 h-8 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 transition-colors">
+                          <Github className="w-4 h-4" />
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Category Badge */}
                 <div className="mb-4">
                   <span className="bg-accent-green/10 text-accent-green px-3 py-1 rounded-full text-xs font-medium">
                     {project.category}
                   </span>
                 </div>
-                <img 
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-48 object-cover rounded-lg mb-4"
-                />
-                <h3 className="text-lg font-bold mb-2">{project.title}</h3>
-                <p className="text-neutral-600 text-sm mb-4">{project.description}</p>
+
+                {/* Project Info */}
+                <h3 className="text-lg font-bold mb-2 group-hover:text-accent-purple transition-colors">
+                  {project.title}
+                </h3>
+                <p className="text-neutral-600 text-sm mb-4 line-clamp-3">
+                  {project.description}
+                </p>
+
+                {/* Project Stats */}
+                <div className="flex items-center gap-4 mb-4 text-xs text-neutral-500">
+                  <div className="flex items-center gap-1">
+                    <Calendar className="w-3 h-3" />
+                    {project.duration}
+                  </div>
+                  <div className="flex items-center gap-1">
+                    <Users className="w-3 h-3" />
+                    {project.teamSize}
+                  </div>
+                </div>
+
+                {/* Results Badge */}
+                <div className="mb-4">
+                  <span className="bg-green-100 text-green-700 px-2 py-1 rounded text-xs font-medium">
+                    {project.results}
+                  </span>
+                </div>
+
+                {/* Technologies */}
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.technologies.map((tech) => (
                     <span key={tech} className="bg-neutral-200/80 backdrop-blur-sm text-neutral-700 px-2 py-1 rounded text-xs">
@@ -80,11 +147,14 @@ const Portfolio = () => {
                     </span>
                   ))}
                 </div>
+
+                {/* CTA */}
                 <button 
                   onClick={scrollToContact}
-                  className="text-primary hover:text-primary/80 transition-colors text-sm font-medium"
+                  className="text-accent-purple hover:text-accent-purple/80 transition-colors text-sm font-medium flex items-center gap-1 group-hover:gap-2 transition-all"
                 >
-                  Get Similar Project →
+                  Get Similar Project 
+                  <ArrowRight className="w-4 h-4" />
                 </button>
               </Card>
             </motion.div>

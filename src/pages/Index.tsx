@@ -5,6 +5,7 @@ import TrustedBy from "@/components/landing/TrustedBy";
 import Features from "@/components/landing/Features";
 import Portfolio from "@/components/landing/Portfolio";
 import AboutUs from "@/components/landing/AboutUs";
+import Testimonials from "@/components/landing/Testimonials";
 import WhyChooseUs from "@/components/landing/WhyChooseUs";
 import ContactForm from "@/components/landing/ContactForm";
 import Footer from "@/components/landing/Footer";
@@ -19,6 +20,7 @@ const Index = () => {
         <Features />
         <Portfolio />
         <AboutUs />
+        <Testimonials />
         <WhyChooseUs />
         <ContactForm />
         <Footer />
