@@ -11,7 +11,6 @@ import ContactForm from "@/components/landing/ContactForm";
 import Footer from "@/components/landing/Footer";
 import StickyContact from "@/components/landing/StickyContact";
 import FAQ from "@/components/landing/FAQ";
-import ServiceComparison from "@/components/landing/ServiceComparison";
 import PersonalizedFeatures from "@/components/landing/PersonalizedFeatures";
 import MobileContact from "@/components/landing/MobileContact";
 import AccessibleNavigation from "@/components/landing/AccessibleNavigation";
@@ -33,7 +32,6 @@ const Index = () => {
           <Testimonials />
           <WhyChooseUs />
           <ContactForm />
-          <ServiceComparison />
           <FAQ />
         </div>
       </div>
