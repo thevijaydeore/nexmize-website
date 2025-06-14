@@ -38,23 +38,25 @@ const Index = () => {
   }, [trackView, trackConversionStep, trackUserJourney]);
 
   return (
-    <div className="min-h-screen bg-neutral-100">
+    <div className="min-h-screen bg-neutral-100 flex flex-col">
       <AccessibleNavigation />
-      <div className="max-w-7xl mx-auto" id="main-content">
-        <Navigation />
-        <Hero />
-        <TrustedBy />
-        <PersonalizedFeatures />
-        <Features />
-        <Portfolio />
-        <AboutUs />
-        <Testimonials />
-        <WhyChooseUs />
-        <ContactForm />
-        <Footer />
-        <ServiceComparison />
-        <FAQ />
+      <div className="flex-1">
+        <div className="max-w-7xl mx-auto" id="main-content">
+          <Navigation />
+          <Hero />
+          <TrustedBy />
+          <PersonalizedFeatures />
+          <Features />
+          <Portfolio />
+          <AboutUs />
+          <Testimonials />
+          <WhyChooseUs />
+          <ContactForm />
+          <ServiceComparison />
+          <FAQ />
+        </div>
       </div>
+      <Footer />
       <StickyContact />
       <MobileContact />
       <FeedbackWidget />
