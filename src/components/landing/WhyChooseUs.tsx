@@ -1,7 +1,7 @@
 
 import { motion } from "framer-motion";
 import { Card } from "@/components/ui/card";
-import { Clock, Shield, Users, Zap, Award, HeadphonesIcon } from "lucide-react";
+import { Clock, Shield, Users, Zap, Award, Headphones } from "lucide-react";
 
 const WhyChooseUs = () => {
   const reasons = [
@@ -24,7 +24,7 @@ const WhyChooseUs = () => {
       color: "from-purple-500 to-violet-500"
     },
     {
-      icon: HeadphonesIcon,
+      icon: Headphones,
       title: "Ongoing Support & Maintenance",
       description: "We don't just build and leave. Continuous support ensures your applications run smoothly.",
       color: "from-orange-500 to-red-500"
