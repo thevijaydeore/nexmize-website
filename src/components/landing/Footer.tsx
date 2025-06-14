@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -7,11 +6,11 @@ const Footer = () => {
       <div className="container-padding py-12 md:py-16">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           <div>
-            <div className="flex items-center gap-2 mb-6">
+            <div className="flex items-center gap-3 mb-6">
               <img 
                 src="/lovable-uploads/215642f8-daaa-441a-8ca1-526fd330cacd.png" 
                 alt="Nexmize Logo" 
-                className="w-8 h-8"
+                className="w-10 h-10"
               />
               <span className="text-xl font-semibold">Nexmize</span>
             </div>

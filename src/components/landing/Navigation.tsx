@@ -17,11 +17,11 @@ const Navigation = () => {
   return (
     <nav className="fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-6xl z-50">
       <div className="glass-panel rounded-full px-6 py-4 flex items-center justify-between shadow-lg backdrop-blur-md">
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-3">
           <img 
             src="/lovable-uploads/215642f8-daaa-441a-8ca1-526fd330cacd.png" 
             alt="Nexmize Logo" 
-            className="w-8 h-8"
+            className="w-10 h-10 md:w-12 md:h-12"
           />
           <span className="text-xl font-semibold">Nexmize</span>
         </div>
