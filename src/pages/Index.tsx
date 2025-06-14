@@ -1,4 +1,3 @@
-
 import Navigation from "@/components/landing/Navigation";
 import Hero from "@/components/landing/Hero";
 import TrustedBy from "@/components/landing/TrustedBy";
@@ -9,6 +8,9 @@ import Testimonials from "@/components/landing/Testimonials";
 import WhyChooseUs from "@/components/landing/WhyChooseUs";
 import ContactForm from "@/components/landing/ContactForm";
 import Footer from "@/components/landing/Footer";
+import StickyContact from "@/components/landing/StickyContact";
+import FAQ from "@/components/landing/FAQ";
+import ServiceComparison from "@/components/landing/ServiceComparison";
 
 const Index = () => {
   return (
@@ -24,7 +26,10 @@ const Index = () => {
         <WhyChooseUs />
         <ContactForm />
         <Footer />
+        <ServiceComparison />
+        <FAQ />
       </div>
+      <StickyContact />
     </div>
   );
 };
