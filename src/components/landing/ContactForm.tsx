@@ -2,7 +2,8 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Card } from "@/components/ui/card";
-import { Mail, Phone, Calendar, CheckCircle, Clock, Shield } from "lucide-react";
+import { Mail, Phone, Calendar, CheckCircle, Clock, Shield, Copy, Check } from "lucide-react";
+
 const ContactForm = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -16,6 +17,9 @@ const ContactForm = () => {
   });
   const [step, setStep] = useState(1);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [showPhonePopup, setShowPhonePopup] = useState(false);
+  const [copied, setCopied] = useState(false);
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log("Form submitted:", formData);
@@ -36,14 +40,32 @@ const ContactForm = () => {
       });
     }, 3000);
   };
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
     });
   };
+
   const nextStep = () => setStep(prev => Math.min(prev + 1, 3));
   const prevStep = () => setStep(prev => Math.max(prev - 1, 1));
+
+  const handlePhoneClick = () => {
+    setShowPhonePopup(true);
+    setTimeout(() => setShowPhonePopup(false), 3000);
+  };
+
+  const copyToClipboard = async () => {
+    try {
+      await navigator.clipboard.writeText("+919021188628");
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch (err) {
+      console.error('Failed to copy: ', err);
+    }
+  };
+
   if (isSubmitted) {
     return <section id="contact" className="py-24 bg-gradient-to-br from-accent-blue/5 via-accent-purple/5 to-accent-green/5 relative overflow-hidden">
         <div className="container-padding relative z-10">
@@ -106,7 +128,7 @@ const ContactForm = () => {
                 </div>
               </div>
 
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form action="https://formsubmit.co/iamvijaydoere@gmail.com" method="POST" onSubmit={handleSubmit} className="space-y-6">
                 {/* Step 1: Basic Information */}
                 {step === 1 && <div className="space-y-6">
                     <h3 className="text-lg font-semibold mb-4">Basic Information</h3>
@@ -223,24 +245,53 @@ const ContactForm = () => {
                 </div>
                 <div>
                   <h3 className="font-semibold">Email Us</h3>
-                  <p className="text-neutral-600">info@nexmize.com</p>
+                  <p className="text-neutral-600">hello@nexmize.com</p>
                 </div>
               </div>
             </Card>
 
-            <Card className="backdrop-blur-xl bg-white/70 border border-white/30 shadow-2xl p-6 rounded-3xl">
+            <Card className="backdrop-blur-xl bg-white/70 border border-white/30 shadow-2xl p-6 rounded-3xl relative">
               <div className="flex items-center gap-4 mb-4">
-                <div className="w-12 h-12 bg-gradient-to-br from-accent-green to-accent-blue rounded-full flex items-center justify-center">
+                <div 
+                  className="w-12 h-12 bg-gradient-to-br from-accent-green to-accent-blue rounded-full flex items-center justify-center cursor-pointer hover:scale-110 transition-transform"
+                  onClick={handlePhoneClick}
+                >
                   <Phone className="w-6 h-6 text-white" />
                 </div>
                 <div>
                   <h3 className="font-semibold">Call Us</h3>
-                  <p className="text-neutral-600">+1 (555) 123-4567</p>
+                  <p className="text-neutral-600">+91 90211 88628</p>
                 </div>
               </div>
+              
+              {/* Phone Popup */}
+              {showPhonePopup && (
+                <div className="absolute top-0 left-0 right-0 bg-gradient-to-r from-accent-green to-accent-blue text-white p-4 rounded-xl shadow-lg z-10">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <p className="font-semibold">Call us now!</p>
+                      <p className="text-sm opacity-90">+91 90211 88628</p>
+                    </div>
+                    <button
+                      onClick={copyToClipboard}
+                      className="flex items-center gap-2 bg-white/20 px-3 py-1 rounded-lg hover:bg-white/30 transition-colors"
+                    >
+                      {copied ? (
+                        <>
+                          <Check className="w-4 h-4" />
+                          <span className="text-xs">Copied!</span>
+                        </>
+                      ) : (
+                        <>
+                          <Copy className="w-4 h-4" />
+                          <span className="text-xs">Copy</span>
+                        </>
+                      )}
+                    </button>
+                  </div>
+                </div>
+              )}
             </Card>
-
-            
 
             <Card className="backdrop-blur-xl bg-white/70 border border-white/30 shadow-2xl p-6 rounded-3xl">
               <h3 className="font-semibold mb-3 flex items-center gap-2">

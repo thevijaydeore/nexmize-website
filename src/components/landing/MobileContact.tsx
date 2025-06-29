@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Phone, MessageCircle, Mail, ArrowRight } from 'lucide-react';
@@ -12,7 +11,7 @@ const MobileContact = () => {
       title: 'Call Now',
       subtitle: 'Instant connection',
       action: () => {
-        window.open('tel:+15551234567');
+        window.open('tel:+919021188628');
       },
       color: 'from-green-500 to-green-600'
     },

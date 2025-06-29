@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { MessageCircle, Phone, X, ArrowRight } from "lucide-react";
@@ -15,7 +14,7 @@ const StickyContact = () => {
   };
 
   const handlePhoneClick = () => {
-    window.open('tel:+15551234567');
+    window.open('tel:+919021188628');
   };
 
   const handleToggleOpen = () => {
@@ -90,7 +89,7 @@ const StickyContact = () => {
                   className="w-full glass-panel py-3 rounded-xl hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2 font-medium"
                 >
                   <Phone className="w-4 h-4" />
-                  Call Now: +1 (555) 123-4567
+                  Call Now: +91 90211 88628
                 </button>
 
                 <div className="text-center text-xs text-neutral-500">

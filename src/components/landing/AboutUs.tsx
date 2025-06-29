@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { Card } from "@/components/ui/card";
 import { Award, Coffee, Heart, Lightbulb } from "lucide-react";
@@ -124,50 +123,6 @@ const AboutUs = () => {
             </Card>
           </motion.div>
         </div>
-
-        {/* Team Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="mb-20"
-        >
-          <div className="text-center mb-12">
-            <h3 className="heading-md mb-4">Meet Our Team</h3>
-            <p className="text-neutral-600 max-w-2xl mx-auto">
-              Our talented team of designers and developers brings years of experience and passion to every project.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {team.map((member, index) => (
-              <motion.div
-                key={member.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <Card className="glass-panel p-6 rounded-2xl text-center hover:shadow-xl transition-all duration-300 group">
-                  <div className="relative mb-4">
-                    <img 
-                      src={member.image}
-                      alt={member.name}
-                      className="w-24 h-24 rounded-full mx-auto object-cover border-4 border-white shadow-lg group-hover:scale-105 transition-transform duration-300"
-                    />
-                    <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2">
-                      <div className="w-4 h-4 bg-green-400 rounded-full border-2 border-white animate-pulse"></div>
-                    </div>
-                  </div>
-                  <h4 className="font-bold text-lg mb-1">{member.name}</h4>
-                  <p className="text-accent-purple font-medium mb-2">{member.role}</p>
-                  <p className="text-sm text-neutral-600">{member.expertise}</p>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
 
         {/* Values Section */}
         <motion.div

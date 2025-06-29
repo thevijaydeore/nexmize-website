@@ -22,12 +22,6 @@ const FAQ = () => {
       category: "Timeline"
     },
     {
-      icon: DollarSign,
-      question: "What are your pricing ranges?",
-      answer: "Business websites start from $2,500, web applications from $8,000, mobile apps from $15,000, and UI/UX design from $3,000. Final pricing depends on features, complexity, and timeline requirements.",
-      category: "Pricing"
-    },
-    {
       icon: Shield,
       question: "Do you provide ongoing support and maintenance?",
       answer: "Yes! We offer comprehensive support packages including security updates, performance monitoring, content updates, and technical support. Our maintenance plans start from $200/month.",
@@ -171,10 +165,10 @@ const FAQ = () => {
                   Get Free Consultation
                 </button>
                 <button 
-                  onClick={() => window.open('tel:+15551234567')}
+                  onClick={() => window.open('tel:+919021188628')}
                   className="button-secondary"
                 >
-                  Call Us: +1 (555) 123-4567
+                  Call Us: +91 90211 88628
                 </button>
               </div>
             </Card>

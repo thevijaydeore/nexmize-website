@@ -1,7 +1,5 @@
-
 import Navigation from "@/components/landing/Navigation";
 import Hero from "@/components/landing/Hero";
-import TrustedBy from "@/components/landing/TrustedBy";
 import Features from "@/components/landing/Features";
 import Portfolio from "@/components/landing/Portfolio";
 import AboutUs from "@/components/landing/AboutUs";
@@ -24,7 +22,6 @@ const Index = () => {
         <div className="max-w-7xl mx-auto" id="main-content">
           <Navigation />
           <Hero />
-          <TrustedBy />
           <PersonalizedFeatures />
           <Features />
           <Portfolio />

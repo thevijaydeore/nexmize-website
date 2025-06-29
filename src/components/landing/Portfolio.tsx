@@ -1,4 +1,3 @@
-
 import { Card } from "@/components/ui/card";
 import { motion } from "framer-motion";
 import { ExternalLink, Github, ArrowRight, Calendar, Users } from "lucide-react";
@@ -41,6 +40,42 @@ const Portfolio = () => {
       duration: "2 months",
       teamSize: "2 developers",
       results: "+180% organic traffic",
+      liveUrl: "#",
+      githubUrl: "#"
+    },
+    {
+      title: "CampusNEX",
+      description: "School management system in web and app form.",
+      image: "https://images.unsplash.com/photo-1513258496099-48168024aec0?w=800&h=600&fit=crop",
+      technologies: ["Web", "App", "School Management"],
+      category: "Web & App",
+      duration: "6 months",
+      teamSize: "5 developers",
+      results: "Efficient school operations",
+      liveUrl: "#",
+      githubUrl: "#"
+    },
+    {
+      title: "CoachingNEX",
+      description: "Coaching application for making IIT JEE exam tests.",
+      image: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=800&h=600&fit=crop",
+      technologies: ["Web", "App", "IIT JEE", "Testing"],
+      category: "Coaching Application",
+      duration: "8 months",
+      teamSize: "4 developers",
+      results: "Enhanced test preparation",
+      liveUrl: "#",
+      githubUrl: "#"
+    },
+    {
+      title: "Xrone",
+      description: "Website and app for modern digital solutions.",
+      image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&h=600&fit=crop",
+      technologies: ["Web", "App"],
+      category: "Website & App",
+      duration: "5 months",
+      teamSize: "3 developers",
+      results: "Improved digital presence",
       liveUrl: "#",
       githubUrl: "#"
     }

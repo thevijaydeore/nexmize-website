@@ -79,7 +79,7 @@ const Hero = () => {
         >
           <span className="inline-flex items-center gap-2 bg-gradient-to-r from-accent-purple to-accent-blue text-white px-6 py-2 rounded-full text-sm font-medium shadow-lg">
             <Zap className="w-4 h-4" />
-            #1 Software Development Agency
+            Your Tech Partner
           </span>
         </motion.div>
 
@@ -103,21 +103,6 @@ const Hero = () => {
           Transform your business with cutting-edge web applications, mobile apps (Android & iOS), 
           stunning websites, and exceptional UI/UX designs. We deliver digital excellence that drives results.
         </motion.p>
-
-        {/* Stats Section */}
-        <motion.div 
-          className="flex flex-wrap justify-center gap-8 mb-12"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-        >
-          {stats.map((stat, index) => (
-            <div key={stat.label} className="glass-panel px-6 py-4 rounded-2xl">
-              <div className="text-2xl font-bold text-accent-purple mb-1">{stat.number}</div>
-              <div className="text-sm text-neutral-600">{stat.label}</div>
-            </div>
-          ))}
-        </motion.div>
 
         {/* Industry Selection for Personalization */}
         {!preferences.industry && (

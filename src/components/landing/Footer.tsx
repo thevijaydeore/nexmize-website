@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, ArrowRight } from "lucide-react";
@@ -36,14 +35,11 @@ const Footer = () => {
 
   const contactInfo = [
     { icon: Mail, text: "hello@nexmize.com", href: "mailto:hello@nexmize.com" },
-    { icon: Phone, text: "+1 (555) 123-4567", href: "tel:+15551234567" },
-    { icon: MapPin, text: "San Francisco, CA", href: "#" }
+    { icon: Phone, text: "+91 90211 88628", href: "tel:+919021188628" }
   ];
 
   const socialLinks = [
-    { name: "LinkedIn", href: "#", color: "hover:text-blue-600" },
-    { name: "GitHub", href: "#", color: "hover:text-gray-800" },
-    { name: "Twitter", href: "#", color: "hover:text-blue-400" }
+    { name: "LinkedIn", href: "https://www.linkedin.com/company/69597916", color: "hover:text-blue-600" }
   ];
 
   return (
@@ -79,7 +75,7 @@ const Footer = () => {
                 </span>
               </div>
               <p className="text-neutral-300 text-lg leading-relaxed mb-8 max-w-md">
-                Professional Software Development Company specializing in Web Applications, Mobile Apps, and UI/UX Design that drives business growth.
+                Your Tech Partner specializing in Web Applications, Mobile Apps, and UI/UX Design that drives business growth.
               </p>
 
               {/* Contact info */}
