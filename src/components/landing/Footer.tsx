@@ -7,9 +7,7 @@ const Footer = () => {
     {
       title: "Services",
       links: [
-        { name: "Web Applications", href: "#services" },
-        { name: "Mobile Apps", href: "#services" },
-        { name: "Business Websites", href: "#services" },
+        { name: "Clinic Websites", href: "#services" },
         { name: "UI/UX Design", href: "#services" }
       ]
     },
@@ -75,7 +73,7 @@ const Footer = () => {
                 </span>
               </div>
               <p className="text-neutral-300 text-lg leading-relaxed mb-8 max-w-md">
-                Your Tech Partner specializing in Web Applications, Mobile Apps, and UI/UX Design that drives business growth.
+                Your Tech Partner specializing in professional clinic websites and UI/UX design that helps healthcare practices grow their patient base.
               </p>
 
               {/* Contact info */}

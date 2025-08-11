@@ -17,45 +17,45 @@ const FAQ = () => {
   const faqs = [
     {
       icon: Clock,
-      question: "How long does it take to complete a project?",
-      answer: "Project timelines vary based on complexity. Simple websites take 2-4 weeks, web applications 6-12 weeks, and mobile apps 8-16 weeks. We provide detailed timelines during our initial consultation.",
+      question: "How long does it take to build a clinic website?",
+      answer: "Most clinic websites are completed within 2-4 weeks. This includes custom design, development, content setup, appointment booking integration, and testing. We provide a detailed timeline during consultation.",
       category: "Timeline"
     },
     {
       icon: Shield,
-      question: "Do you provide ongoing support and maintenance?",
-      answer: "Yes! We offer comprehensive support packages including security updates, performance monitoring, content updates, and technical support. Our maintenance plans start from $200/month.",
-      category: "Support"
+      question: "Is my clinic website HIPAA compliant?",
+      answer: "Yes! We build all clinic websites with HIPAA compliance in mind, including secure contact forms, patient portals, and proper data encryption. We also provide ongoing security maintenance.",
+      category: "Security"
     },
     {
       icon: Zap,
-      question: "What technologies do you use?",
-      answer: "We use modern, proven technologies including React, Node.js, TypeScript, Python, AWS, and mobile-native development. We choose the best tech stack for each project's specific needs.",
-      category: "Technical"
+      question: "Can patients book appointments online through the website?",
+      answer: "Absolutely! We integrate appointment booking systems that allow patients to schedule, reschedule, and cancel appointments 24/7. It syncs with your existing practice management software.",
+      category: "Features"
     },
     {
       icon: Users,
-      question: "Do you work with startups or only established companies?",
-      answer: "We work with businesses of all sizes, from early-stage startups to enterprise companies. We offer flexible payment plans and scaled solutions to match your budget and growth stage.",
-      category: "Business"
+      question: "Do you help with patient reviews and testimonials?",
+      answer: "Yes, we build patient review sections into your website and can integrate with Google Reviews, Healthgrades, and other platforms to showcase your practice's reputation.",
+      category: "Marketing"
     },
     {
       icon: Wrench,
-      question: "Can you help with existing projects or only new builds?",
-      answer: "We can both build from scratch and improve existing applications. Our services include code audits, performance optimization, feature additions, and complete redesigns of existing systems.",
-      category: "Support"
+      question: "Can you update my existing clinic website?",
+      answer: "Definitely! We can modernize your existing website, improve search rankings, add new features like online booking, or build a completely new site while preserving your current patient data.",
+      category: "Updates"
     },
     {
       icon: Package,
-      question: "What's included in the project cost?",
-      answer: "All projects include design, development, testing, deployment, training, and 3 months of free support. We also provide project documentation, source code, and deployment guides.",
+      question: "What's included in the clinic website package?",
+      answer: "Our clinic websites include responsive design, appointment booking, patient forms, service pages, doctor profiles, contact integration, SEO optimization, and 3 months of free updates and support.",
       category: "Pricing"
     },
     {
       icon: Award,
-      question: "How do you ensure project quality?",
-      answer: "We follow industry best practices including code reviews, automated testing, security audits, and performance optimization. Every project goes through multiple quality assurance phases.",
-      category: "Quality"
+      question: "Will my clinic website rank well on Google?",
+      answer: "Yes! We build all websites with SEO best practices, local search optimization for your area, and Google My Business integration to help patients find your clinic online.",
+      category: "SEO"
     }
   ];
 
