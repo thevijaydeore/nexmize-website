@@ -29,7 +29,7 @@ const Hero = () => {
     { number: "24/7", label: "Support" }
   ];
 
-  const typingText = "Build Your Digital Future with Nexmize";
+  const typingText = "Build Your Clinic Presence with Nexmize";
 
   const industries = [
     { id: 'healthcare', label: 'Healthcare', icon: '🏥' },

@@ -11,12 +11,6 @@ const Features = () => {
       image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=800&h=600&fit=crop"
     },
     {
-      title: "Mobile App Development",
-      description: "Native and cross-platform mobile applications for Android and iOS that deliver exceptional user experiences.",
-      points: ["Android App Development", "iOS App Development", "Cross-Platform Solutions"],
-      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=600&fit=crop"
-    },
-    {
       title: "UI/UX Design Services",
       description: "Beautiful and intuitive designs that not only look great but also provide seamless user experiences.",
       points: ["User Interface Design", "User Experience Research", "Design System Creation"],

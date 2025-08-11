@@ -24,9 +24,7 @@ const Index = () => {
           <Hero />
           <PersonalizedFeatures />
           <Features />
-          <Portfolio />
           <AboutUs />
-          <Testimonials />
           <WhyChooseUs />
           <ContactForm />
           <FAQ />
