@@ -11,7 +11,7 @@ const MobileContact = () => {
       title: 'Call Now',
       subtitle: 'Instant connection',
       action: () => {
-        window.open('tel:+919021188628');
+        window.open('tel:+919975292305');
       },
       color: 'from-green-500 to-green-600'
     },

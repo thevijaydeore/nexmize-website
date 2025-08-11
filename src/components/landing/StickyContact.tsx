@@ -14,7 +14,7 @@ const StickyContact = () => {
   };
 
   const handlePhoneClick = () => {
-    window.open('tel:+919021188628');
+    window.open('tel:+919975292305');
   };
 
   const handleToggleOpen = () => {
@@ -89,7 +89,7 @@ const StickyContact = () => {
                   className="w-full glass-panel py-3 rounded-xl hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2 font-medium"
                 >
                   <Phone className="w-4 h-4" />
-                  Call Now: +91 90211 88628
+                  Call Now: +91 99752 92305
                 </button>
 
                 <div className="text-center text-xs text-neutral-500">

@@ -9,13 +9,8 @@ const ContactForm = () => {
     name: "",
     email: "",
     phone: "",
-    company: "",
-    service: "",
-    budget: "",
-    timeline: "",
-    message: ""
+    clinicName: ""
   });
-  const [step, setStep] = useState(1);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [showPhonePopup, setShowPhonePopup] = useState(false);
   const [copied, setCopied] = useState(false);
@@ -27,16 +22,11 @@ const ContactForm = () => {
     // Reset form after 3 seconds
     setTimeout(() => {
       setIsSubmitted(false);
-      setStep(1);
       setFormData({
         name: "",
         email: "",
         phone: "",
-        company: "",
-        service: "",
-        budget: "",
-        timeline: "",
-        message: ""
+        clinicName: ""
       });
     }, 3000);
   };
@@ -48,8 +38,6 @@ const ContactForm = () => {
     });
   };
 
-  const nextStep = () => setStep(prev => Math.min(prev + 1, 3));
-  const prevStep = () => setStep(prev => Math.max(prev - 1, 1));
 
   const handlePhoneClick = () => {
     setShowPhonePopup(true);
@@ -58,7 +46,7 @@ const ContactForm = () => {
 
   const copyToClipboard = async () => {
     try {
-      await navigator.clipboard.writeText("+919021188628");
+      await navigator.clipboard.writeText("+919975292305");
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     } catch (err) {
@@ -115,124 +103,78 @@ const ContactForm = () => {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 max-w-6xl mx-auto">
           <div className="lg:col-span-2">
             <Card className="backdrop-blur-xl bg-white/70 border border-white/30 shadow-2xl p-8 rounded-3xl">
-              {/* Progress Bar */}
-              <div className="mb-8">
-                <div className="flex justify-between text-sm text-neutral-600 mb-2">
-                  <span>Step {step} of 3</span>
-                  <span>{Math.round(step / 3 * 100)}% Complete</span>
-                </div>
-                <div className="w-full bg-neutral-200 rounded-full h-2">
-                  <div className="bg-gradient-to-r from-accent-purple to-accent-blue h-2 rounded-full transition-all duration-300" style={{
-                  width: `${step / 3 * 100}%`
-                }}></div>
-                </div>
-              </div>
-
+              <h3 className="text-lg font-semibold mb-6">Get Started with Your Clinic Website</h3>
+              
               <form action="https://formsubmit.co/iamvijaydoere@gmail.com" method="POST" onSubmit={handleSubmit} className="space-y-6">
-                {/* Step 1: Basic Information */}
-                {step === 1 && <div className="space-y-6">
-                    <h3 className="text-lg font-semibold mb-4">Basic Information</h3>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      <div>
-                        <label htmlFor="name" className="block text-sm font-medium text-neutral-700 mb-2">
-                          Full Name *
-                        </label>
-                        <input type="text" id="name" name="name" required value={formData.name} onChange={handleChange} className="w-full px-4 py-3 bg-white/50 backdrop-blur-sm border border-white/30 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all" placeholder="Your full name" />
-                      </div>
-                      <div>
-                        <label htmlFor="email" className="block text-sm font-medium text-neutral-700 mb-2">
-                          Email Address *
-                        </label>
-                        <input type="email" id="email" name="email" required value={formData.email} onChange={handleChange} className="w-full px-4 py-3 bg-white/50 backdrop-blur-sm border border-white/30 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all" placeholder="your@email.com" />
-                      </div>
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      <div>
-                        <label htmlFor="phone" className="block text-sm font-medium text-neutral-700 mb-2">
-                          Phone Number
-                        </label>
-                        <input type="tel" id="phone" name="phone" value={formData.phone} onChange={handleChange} className="w-full px-4 py-3 bg-white/50 backdrop-blur-sm border border-white/30 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all" placeholder="+1 (555) 123-4567" />
-                      </div>
-                      <div>
-                        <label htmlFor="company" className="block text-sm font-medium text-neutral-700 mb-2">
-                          Company Name
-                        </label>
-                        <input type="text" id="company" name="company" value={formData.company} onChange={handleChange} className="w-full px-4 py-3 bg-white/50 backdrop-blur-sm border border-white/30 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all" placeholder="Your company" />
-                      </div>
-                    </div>
-                  </div>}
-
-                {/* Step 2: Project Details */}
-                {step === 2 && <div className="space-y-6">
-                    <h3 className="text-lg font-semibold mb-4">Project Details</h3>
-                    <div>
-                      <label htmlFor="service" className="block text-sm font-medium text-neutral-700 mb-2">
-                        Service Interested In *
-                      </label>
-                      <select id="service" name="service" required value={formData.service} onChange={handleChange} className="w-full px-4 py-3 bg-white/50 backdrop-blur-sm border border-white/30 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all">
-                        <option value="">Select a service</option>
-                        <option value="web-application">Web Application</option>
-                        <option value="mobile-app">Mobile App (Android & iOS)</option>
-                        <option value="business-website">Business Website</option>
-                        <option value="ui-ux-design">UI/UX Design</option>
-                        <option value="consultation">Consultation</option>
-                      </select>
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      <div>
-                        <label htmlFor="budget" className="block text-sm font-medium text-neutral-700 mb-2">
-                          Budget Range
-                        </label>
-                        <select id="budget" name="budget" value={formData.budget} onChange={handleChange} className="w-full px-4 py-3 bg-white/50 backdrop-blur-sm border border-white/30 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all">
-                          <option value="">Select budget range</option>
-                          <option value="under-5k">Under $5,000</option>
-                          <option value="5k-15k">$5,000 - $15,000</option>
-                          <option value="15k-30k">$15,000 - $30,000</option>
-                          <option value="30k-50k">$30,000 - $50,000</option>
-                          <option value="over-50k">Over $50,000</option>
-                        </select>
-                      </div>
-                      <div>
-                        <label htmlFor="timeline" className="block text-sm font-medium text-neutral-700 mb-2">
-                          Preferred Timeline
-                        </label>
-                        <select id="timeline" name="timeline" value={formData.timeline} onChange={handleChange} className="w-full px-4 py-3 bg-white/50 backdrop-blur-sm border border-white/30 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all">
-                          <option value="">Select timeline</option>
-                          <option value="asap">ASAP (Rush project)</option>
-                          <option value="1-2-months">1-2 months</option>
-                          <option value="2-4-months">2-4 months</option>
-                          <option value="4-6-months">4-6 months</option>
-                          <option value="flexible">Flexible timeline</option>
-                        </select>
-                      </div>
-                    </div>
-                  </div>}
-
-                {/* Step 3: Message */}
-                {step === 3 && <div className="space-y-6">
-                    <h3 className="text-lg font-semibold mb-4">Project Details</h3>
-                    <div>
-                      <label htmlFor="message" className="block text-sm font-medium text-neutral-700 mb-2">
-                        Tell us about your project *
-                      </label>
-                      <Textarea id="message" name="message" required value={formData.message} onChange={handleChange} rows={6} className="w-full px-4 py-3 bg-white/50 backdrop-blur-sm border border-white/30 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all resize-none" placeholder="Describe your project goals, features needed, target audience, and any specific requirements..." />
-                    </div>
-                  </div>}
-
-                {/* Navigation Buttons */}
-                <div className="flex justify-between pt-6">
-                  <button type="button" onClick={prevStep} className={`px-6 py-2 rounded-xl transition-all ${step === 1 ? 'opacity-0 pointer-events-none' : 'glass-panel hover:shadow-lg'}`}>
-                    Previous
-                  </button>
-                  
-                  {step < 3 ? <button type="button" onClick={nextStep} className="button-primary px-8">
-                      Next Step
-                    </button> : <Button type="submit" className="button-primary px-8">
-                      Send Message
-                    </Button>}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label htmlFor="name" className="block text-sm font-medium text-neutral-700 mb-2">
+                      Full Name *
+                    </label>
+                    <input 
+                      type="text" 
+                      id="name" 
+                      name="name" 
+                      required 
+                      value={formData.name} 
+                      onChange={handleChange} 
+                      className="w-full px-4 py-3 bg-white/50 backdrop-blur-sm border border-white/30 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all" 
+                      placeholder="Your full name" 
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="email" className="block text-sm font-medium text-neutral-700 mb-2">
+                      Email Address *
+                    </label>
+                    <input 
+                      type="email" 
+                      id="email" 
+                      name="email" 
+                      required 
+                      value={formData.email} 
+                      onChange={handleChange} 
+                      className="w-full px-4 py-3 bg-white/50 backdrop-blur-sm border border-white/30 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all" 
+                      placeholder="your@email.com" 
+                    />
+                  </div>
                 </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label htmlFor="phone" className="block text-sm font-medium text-neutral-700 mb-2">
+                      Phone Number *
+                    </label>
+                    <input 
+                      type="tel" 
+                      id="phone" 
+                      name="phone" 
+                      required
+                      value={formData.phone} 
+                      onChange={handleChange} 
+                      className="w-full px-4 py-3 bg-white/50 backdrop-blur-sm border border-white/30 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all" 
+                      placeholder="+91 99752 92305" 
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="clinicName" className="block text-sm font-medium text-neutral-700 mb-2">
+                      Clinic Name *
+                    </label>
+                    <input 
+                      type="text" 
+                      id="clinicName" 
+                      name="clinicName" 
+                      required
+                      value={formData.clinicName} 
+                      onChange={handleChange} 
+                      className="w-full px-4 py-3 bg-white/50 backdrop-blur-sm border border-white/30 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all" 
+                      placeholder="Your clinic name" 
+                    />
+                  </div>
+                </div>
+
+                <Button type="submit" className="w-full button-primary">
+                  Get Free Consultation
+                </Button>
               </form>
             </Card>
           </div>
@@ -260,7 +202,7 @@ const ContactForm = () => {
                 </div>
                 <div>
                   <h3 className="font-semibold">Call Us</h3>
-                  <p className="text-neutral-600">+91 90211 88628</p>
+                  <p className="text-neutral-600">+91 99752 92305</p>
                 </div>
               </div>
               
@@ -270,7 +212,7 @@ const ContactForm = () => {
                   <div className="flex items-center justify-between">
                     <div>
                       <p className="font-semibold">Call us now!</p>
-                      <p className="text-sm opacity-90">+91 90211 88628</p>
+                      <p className="text-sm opacity-90">+91 99752 92305</p>
                     </div>
                     <button
                       onClick={copyToClipboard}

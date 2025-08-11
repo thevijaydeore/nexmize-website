@@ -1,9 +1,7 @@
 import Navigation from "@/components/landing/Navigation";
 import Hero from "@/components/landing/Hero";
 import Features from "@/components/landing/Features";
-import Portfolio from "@/components/landing/Portfolio";
 import AboutUs from "@/components/landing/AboutUs";
-import Testimonials from "@/components/landing/Testimonials";
 import WhyChooseUs from "@/components/landing/WhyChooseUs";
 import ContactForm from "@/components/landing/ContactForm";
 import Footer from "@/components/landing/Footer";
@@ -13,6 +11,7 @@ import PersonalizedFeatures from "@/components/landing/PersonalizedFeatures";
 import MobileContact from "@/components/landing/MobileContact";
 import AccessibleNavigation from "@/components/landing/AccessibleNavigation";
 import QuickFeedback from "@/components/landing/QuickFeedback";
+import IndependenceDayOffer from "@/components/landing/IndependenceDayOffer";
 
 const Index = () => {
   return (
@@ -34,6 +33,7 @@ const Index = () => {
       <StickyContact />
       <MobileContact />
       <QuickFeedback />
+      <IndependenceDayOffer />
     </div>
   );
 };

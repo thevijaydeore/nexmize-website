@@ -165,10 +165,10 @@ const FAQ = () => {
                   Get Free Consultation
                 </button>
                 <button 
-                  onClick={() => window.open('tel:+919021188628')}
+                  onClick={() => window.open('tel:+919975292305')}
                   className="button-secondary"
                 >
-                  Call Us: +91 90211 88628
+                  Call Us: +91 99752 92305
                 </button>
               </div>
             </Card>

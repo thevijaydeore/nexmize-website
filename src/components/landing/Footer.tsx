@@ -33,7 +33,7 @@ const Footer = () => {
 
   const contactInfo = [
     { icon: Mail, text: "hello@nexmize.com", href: "mailto:hello@nexmize.com" },
-    { icon: Phone, text: "+91 90211 88628", href: "tel:+919021188628" }
+    { icon: Phone, text: "+91 99752 92305", href: "tel:+919975292305" }
   ];
 
   const socialLinks = [
