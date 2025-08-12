@@ -1,9 +1,7 @@
-import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Phone, MessageCircle, Mail, ArrowRight } from 'lucide-react';
+import { Phone, Mail } from 'lucide-react';
 
 const MobileContact = () => {
-  const [activeTab, setActiveTab] = useState(0);
 
   const contactMethods = [
     {
@@ -14,18 +12,6 @@ const MobileContact = () => {
         window.open('tel:+919975292305');
       },
       color: 'from-green-500 to-green-600'
-    },
-    {
-      icon: MessageCircle,
-      title: 'Live Chat',
-      subtitle: 'Quick response',
-      action: () => {
-        const element = document.getElementById('contact');
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
-        }
-      },
-      color: 'from-blue-500 to-blue-600'
     },
     {
       icon: Mail,

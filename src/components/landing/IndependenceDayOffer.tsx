@@ -67,15 +67,15 @@ const IndependenceDayOffer = () => {
       {/* Main Popup Modal */}
       <AnimatePresence>
         {isOpen && (
-          <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+          <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-2 sm:p-4">
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.9 }}
               transition={{ duration: 0.3 }}
-              className="w-full max-w-md"
+              className="w-full max-w-[20rem] sm:max-w-md scale-95 sm:scale-100"
             >
-              <Card className="relative overflow-hidden bg-gradient-to-br from-orange-50 via-white to-green-50 border-4 border-orange-400 shadow-2xl">
+              <Card className="relative overflow-hidden bg-gradient-to-br from-orange-50 via-white to-green-50 border-2 sm:border-4 border-orange-400 shadow-xl sm:shadow-2xl rounded-xl">
                 {/* Indian Flag Stripe Pattern */}
                 <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-orange-500 via-orange-400 to-orange-500"></div>
                 <div className="absolute top-2 left-0 right-0 h-2 bg-white"></div>
@@ -88,42 +88,42 @@ const IndependenceDayOffer = () => {
                 <div className="absolute bottom-3 right-8 text-green-500 text-xs">✦</div>
                 <button
                   onClick={handleClose}
-                  className="absolute top-4 right-4 z-10 w-8 h-8 bg-white/90 rounded-full flex items-center justify-center hover:bg-white transition-colors"
+                  className="absolute top-3 right-3 sm:top-4 sm:right-4 z-10 w-8 h-8 bg-white/90 rounded-full flex items-center justify-center hover:bg-white transition-colors"
                 >
                   <X className="w-4 h-4" />
                 </button>
 
                 {!isSubmitted ? (
-                  <div className="p-6 pt-10">
+                  <div className="p-3 sm:p-6 pt-6 sm:pt-10">
                     {/* Header */}
-                    <div className="text-center mb-6">
+                    <div className="text-center mb-3 sm:mb-6">
                       <div className="flex items-center justify-center gap-2 mb-3">
-                        <div className="text-2xl">🇮🇳</div>
-                        <Gift className="w-7 h-7 text-orange-500 animate-pulse" />
-                        <div className="text-2xl">🎉</div>
+                        <div className="text-xl sm:text-2xl">🇮🇳</div>
+                        <Gift className="w-6 h-6 sm:w-7 sm:h-7 text-orange-500 animate-pulse" />
+                        <div className="text-xl sm:text-2xl">🎉</div>
                       </div>
                       <div className="relative mb-2">
                         <div className="absolute inset-0 bg-gradient-to-r from-orange-500 via-white to-green-600 rounded-lg opacity-20"></div>
-                        <h2 className="relative text-2xl font-bold text-gray-800 py-2 px-4 drop-shadow-sm">
+                        <h2 className="relative text-lg sm:text-2xl font-bold text-gray-800 py-1.5 px-3 sm:py-2 sm:px-4 drop-shadow-sm">
                           🎊Independence Day Special🎊
                         </h2>
                       </div>
-                      <div className="relative rounded-lg p-4 border-2 border-dashed border-orange-300">
+                      <div className="relative rounded-lg p-2.5 sm:p-4 border-2 border-dashed border-orange-300">
                         <div className="absolute inset-0 bg-gradient-to-r from-orange-500 via-white to-green-600 rounded-lg opacity-10"></div>
                         <div className="relative">
                           {/* Tricolor stripes inside the box */}
                           <div className="absolute -top-2 left-0 right-0 h-1 bg-gradient-to-r from-orange-500 via-white to-green-600 rounded-full"></div>
-                        <p className="text-sm font-semibold text-orange-700 mb-2">🔥 Freedom Sale - Limited Time Only! 🔥</p>
-                        <div className="flex items-center justify-center gap-3 mb-2">
-                          <span className="text-xl line-through text-gray-500">₹50,000</span>
-                          <div className="bg-gradient-to-r from-red-500 to-red-600 text-white px-3 py-1 rounded-full text-sm font-bold animate-bounce">
+                        <p className="text-[11px] sm:text-sm font-semibold text-orange-700 mb-2">🔥 Freedom Sale - Limited Time Only! 🔥</p>
+                        <div className="flex items-center justify-center gap-2.5 sm:gap-3 mb-2">
+                          <span className="text-base sm:text-xl line-through text-gray-500">₹50,000</span>
+                          <div className="bg-gradient-to-r from-red-500 to-red-600 text-white px-2 py-0.5 sm:px-3 sm:py-1 rounded-full text-[11px] sm:text-sm font-bold animate-bounce">
                             62% OFF 🎯
                           </div>
                         </div>
-                        <p className="text-3xl font-bold bg-gradient-to-r from-green-600 to-green-700 bg-clip-text text-transparent">
+                        <p className="text-xl sm:text-3xl font-bold bg-gradient-to-r from-green-600 to-green-700 bg-clip-text text-transparent">
                           ₹18,999 only! 💰
                         </p>
-                        <p className="text-xs text-orange-600 mt-2 font-medium">🗓️ Valid till 15th August 2024 | 🚀 Celebrate Freedom with Savings!</p>
+                        <p className="text-[11px] sm:text-xs text-orange-600 mt-1.5 sm:mt-2 font-medium">🗓️ Valid till 15th August 2024 | 🚀 Celebrate Freedom with Savings!</p>
                         </div>
                       </div>
                     </div>
@@ -174,16 +174,16 @@ const IndependenceDayOffer = () => {
 
 
 
-                      <Button type="submit" className="w-full bg-gradient-to-r from-orange-500 via-white to-green-600 text-black font-bold py-3 text-lg hover:scale-105 transition-transform duration-200 border-2 border-orange-400 shadow-lg">
+                      <Button type="submit" className="w-full bg-gradient-to-r from-orange-500 via-white to-green-600 text-black font-bold py-2 sm:py-3 text-sm sm:text-base hover:scale-105 transition-transform duration-200 border-2 border-orange-400 shadow-lg">
                         🎊 Claim Freedom Offer Now! 🇮🇳
                       </Button>
                     </form>
 
-                    <div className="text-center mt-4 p-3 bg-gradient-to-r from-orange-50 to-green-50 rounded-lg border border-orange-200">
-                      <p className="text-xs text-orange-700 font-medium">
+                    <div className="text-center mt-3 sm:mt-4 p-2 sm:p-3 bg-gradient-to-r from-orange-50 to-green-50 rounded-lg border border-orange-200">
+                      <p className="text-[11px] sm:text-xs text-orange-700 font-medium">
                         🎯 Offer valid till Independence Day | 📞 Terms & conditions apply
                       </p>
-                      <p className="text-xs text-green-600 mt-1">
+                      <p className="text-[11px] sm:text-xs text-green-600 mt-1">
                         🌟 Join thousands celebrating digital freedom with Nexmize!
                       </p>
                     </div>
@@ -218,13 +218,13 @@ const IndependenceDayOffer = () => {
             animate={{ opacity: 1, scale: 1, x: 0 }}
             exit={{ opacity: 0, scale: 0, x: -100 }}
             transition={{ duration: 0.3, type: "spring" }}
-            className="fixed bottom-6 left-6 z-40"
+            className="fixed bottom-24 sm:bottom-6 left-5 sm:left-6 z-50"
           >
             <button
               onClick={handleFloatingIconClick}
-              className="w-16 h-16 bg-gradient-to-r from-orange-500 via-white to-green-600 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 flex items-center justify-center group hover:scale-110 border-4 border-white"
+              className="w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-r from-orange-500 via-white to-green-600 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 flex items-center justify-center group hover:scale-110 border-[3px] sm:border-4 border-white"
             >
-              <Gift className="w-8 h-8 text-gray-800 group-hover:animate-bounce" />
+              <Gift className="w-7 h-7 sm:w-8 sm:h-8 text-gray-800 group-hover:animate-bounce" />
               {/* Pulse animation with tricolor */}
               <div className="absolute inset-0 rounded-full bg-gradient-to-r from-orange-500 via-white to-green-600 animate-ping opacity-30"></div>
               {/* Sparkle effect */}

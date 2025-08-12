@@ -100,8 +100,7 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-          Transform your business with cutting-edge web applications, mobile apps (Android & iOS), 
-          stunning websites, and exceptional UI/UX designs. We deliver digital excellence that drives results.
+          Elevate your business with high-performance websites and exceptional UI/UX design. We craft fast, SEO-friendly, and conversion-focused web experiences that drive results.
         </motion.p>
 
         {/* Industry Selection for Personalization */}
